@@ -101,6 +101,7 @@ function normalizeWords(words) {
   return words.map((item, index) => ({
     id: item.id || slugify(item.word || `word-${index}`),
     word: item.word || "",
+    source: item.source || item.raw || item.word || "",
     translation: item.translation || "",
     part: item.part || "Weitere",
     category: item.category || "Weitere",
@@ -155,17 +156,32 @@ function parseCsv(text) {
 
 function splitVerbForms(value) {
   const match = value.match(/^(.+?)\s*\((.+)\)$/);
-  if (!match) return { word: value.trim(), forms: [] };
+  if (!match) return { word: value.trim(), forms: [], source: value.trim() };
+  const [praeteritum, perfekt, ...rest] = match[2].split(",").map((part) => part.trim()).filter(Boolean);
+  const forms = [
+    praeteritum ? `Präteritum: ${praeteritum}` : "",
+    perfekt ? `Perfekt: ${perfekt}` : "",
+    ...rest,
+  ].filter(Boolean);
+
   return {
     word: match[1].trim(),
-    forms: match[2].split(",").map((part) => part.trim()).filter(Boolean),
+    forms,
+    source: value.trim(),
   };
+}
+
+function splitMeanings(value) {
+  return value
+    .split(/[;,]/)
+    .map((part) => part.trim())
+    .filter(Boolean);
 }
 
 function notionCsvToWords(text) {
   return parseCsv(text).map((row, index) => {
     const rawVerb = row["Verb (Präteritum, Perfekt)"] || row.Verb || row.word || "";
-    const { word, forms } = splitVerbForms(rawVerb);
+    const { word, forms, source } = splitVerbForms(rawVerb);
     const kasus = row.Kasus || "Weitere";
     const translation = row.Russisch || row.translation || "";
     const example = row.Beispiel || "";
@@ -173,15 +189,16 @@ function notionCsvToWords(text) {
     return {
       id: slugify(word) || `word-${index + 1}`,
       word,
+      source,
       translation,
       part: "Глаголы",
       category: kasus,
       level: "",
       gender: "",
       forms,
-      meanings: [translation].filter(Boolean),
+      meanings: splitMeanings(translation),
       examples: example ? [{ de: example, ru: "" }] : [],
-      related: kasus ? [`${kasus}-Verb`] : [],
+      related: [],
       status: "new",
       favorite: false,
     };
@@ -221,7 +238,7 @@ function filteredWords() {
       if (state.category !== "Все" && word.category !== state.category) return false;
       if (!query) return true;
       return [word.word, word.translation, word.category, word.part, word.level]
-        .concat(word.meanings, word.related)
+        .concat(word.source, word.forms, word.meanings, word.related, word.examples.map((example) => example.de))
         .join(" ")
         .toLowerCase()
         .includes(query);
@@ -337,12 +354,15 @@ function renderCards() {
         <span class="flashcard-side flashcard-front">
           <small>Deutsch</small>
           <strong>${escapeHtml(word.word)}</strong>
-          <em>${word.forms.map(escapeHtml).join(" · ")}</em>
+          <em>${escapeHtml(word.category || "")}</em>
         </span>
         <span class="flashcard-side flashcard-back">
           <small>Русский</small>
           <strong>${escapeHtml(word.translation)}</strong>
-          <em>${escapeHtml(word.examples[0]?.de || "Нет примера")}</em>
+          <em>${[
+            word.forms.join(" · "),
+            word.examples[0]?.de || "",
+          ].filter(Boolean).map(escapeHtml).join("<br>")}</em>
         </span>
       </button>
 
@@ -364,7 +384,7 @@ function wordRow(word) {
   return `
     <button class="word-row ${word.id === state.selectedId ? "selected" : ""}" type="button" data-id="${word.id}">
       <span class="star-button ${word.favorite ? "active" : ""}" data-favorite="${word.id}" title="Избранное">★</span>
-      <span><strong>${escapeHtml(word.word)}</strong></span>
+      <span><strong>${escapeHtml(word.source || word.word)}</strong></span>
       <span>${escapeHtml(word.translation)}</span>
       <span>${escapeHtml(word.category)}</span>
       <span class="status ${word.status}">${statusLabels[word.status]}</span>
@@ -385,6 +405,8 @@ function renderDetail() {
   }
   state.selectedId = word.id;
   const tags = [word.part, word.gender, word.level, ...word.forms].filter(Boolean);
+  const detailRelated = word.related.length ? word.related : word.forms;
+  const detailRelatedTitle = word.related.length ? "Связанные слова" : "Формы";
   els.detailPane.innerHTML = `
     <div class="detail-top">
       <div class="detail-title">
@@ -420,9 +442,9 @@ function renderDetail() {
     </section>
 
     <section class="detail-section">
-      <h3>Связанные слова</h3>
+      <h3>${detailRelatedTitle}</h3>
       <div class="related-list">
-        ${(word.related.length ? word.related : ["Добавь связи"]).map((related) => `<span>${escapeHtml(related)}</span>`).join("")}
+        ${(detailRelated.length ? detailRelated : ["Нет данных"]).map((related) => `<span>${escapeHtml(related)}</span>`).join("")}
       </div>
     </section>
 

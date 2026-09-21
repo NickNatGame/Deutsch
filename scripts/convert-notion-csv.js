@@ -54,16 +54,31 @@ function slugify(value) {
 
 function splitVerbForms(value) {
   const match = value.match(/^(.+?)\s*\((.+)\)$/);
-  if (!match) return { word: value.trim(), forms: [] };
+  if (!match) return { word: value.trim(), forms: [], source: value.trim() };
+  const [praeteritum, perfekt, ...rest] = match[2].split(",").map((part) => part.trim()).filter(Boolean);
+  const forms = [
+    praeteritum ? `Präteritum: ${praeteritum}` : "",
+    perfekt ? `Perfekt: ${perfekt}` : "",
+    ...rest,
+  ].filter(Boolean);
+
   return {
     word: match[1].trim(),
-    forms: match[2].split(",").map((part) => part.trim()).filter(Boolean),
+    forms,
+    source: value.trim(),
   };
+}
+
+function splitMeanings(value) {
+  return value
+    .split(/[;,]/)
+    .map((part) => part.trim())
+    .filter(Boolean);
 }
 
 function convertRow(row, index) {
   const rawVerb = row["Verb (Präteritum, Perfekt)"] || row.Verb || row.word || "";
-  const { word, forms } = splitVerbForms(rawVerb);
+  const { word, forms, source } = splitVerbForms(rawVerb);
   const kasus = row.Kasus || "Weitere";
   const translation = row.Russisch || row.translation || "";
   const example = row.Beispiel || "";
@@ -71,15 +86,16 @@ function convertRow(row, index) {
   return {
     id: slugify(word) || `word-${index + 1}`,
     word,
+    source,
     translation,
     part: "Глаголы",
     category: kasus,
     level: "",
     gender: "",
     forms,
-    meanings: [translation].filter(Boolean),
+    meanings: splitMeanings(translation),
     examples: example ? [{ de: example, ru: "" }] : [],
-    related: kasus ? [`${kasus}-Verb`] : [],
+    related: [],
     status: "new",
     favorite: false,
   };

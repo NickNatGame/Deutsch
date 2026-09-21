@@ -2,14 +2,15 @@
   {
     "id": "helfen",
     "word": "helfen",
+    "source": "helfen (half, hat geholfen)",
     "translation": "помогать",
     "part": "Глаголы",
     "category": "Dativ",
     "level": "",
     "gender": "",
     "forms": [
-      "half",
-      "hat geholfen"
+      "Präteritum: half",
+      "Perfekt: hat geholfen"
     ],
     "meanings": [
       "помогать"
@@ -20,23 +21,22 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Dativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "anrufen",
     "word": "anrufen",
+    "source": "anrufen (rief an, hat angerufen)",
     "translation": "звонить кому-либо",
     "part": "Глаголы",
     "category": "Akkusativ",
     "level": "",
     "gender": "",
     "forms": [
-      "rief an",
-      "hat angerufen"
+      "Präteritum: rief an",
+      "Perfekt: hat angerufen"
     ],
     "meanings": [
       "звонить кому-либо"
@@ -47,26 +47,26 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Akkusativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "besuchen",
     "word": "besuchen",
+    "source": "besuchen (besuchte, hat besucht)",
     "translation": "посещать, навещать",
     "part": "Глаголы",
     "category": "Akkusativ",
     "level": "",
     "gender": "",
     "forms": [
-      "besuchte",
-      "hat besucht"
+      "Präteritum: besuchte",
+      "Perfekt: hat besucht"
     ],
     "meanings": [
-      "посещать, навещать"
+      "посещать",
+      "навещать"
     ],
     "examples": [
       {
@@ -74,23 +74,22 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Akkusativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "danken",
     "word": "danken",
+    "source": "danken (dankte, hat gedankt)",
     "translation": "благодарить",
     "part": "Глаголы",
     "category": "Dativ",
     "level": "",
     "gender": "",
     "forms": [
-      "dankte",
-      "hat gedankt"
+      "Präteritum: dankte",
+      "Perfekt: hat gedankt"
     ],
     "meanings": [
       "благодарить"
@@ -101,23 +100,22 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Dativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "gefallen",
     "word": "gefallen",
+    "source": "gefallen (gefiel, hat gefallen)",
     "translation": "нравиться",
     "part": "Глаголы",
     "category": "Dativ",
     "level": "",
     "gender": "",
     "forms": [
-      "gefiel",
-      "hat gefallen"
+      "Präteritum: gefiel",
+      "Perfekt: hat gefallen"
     ],
     "meanings": [
       "нравиться"
@@ -128,23 +126,22 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Dativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "bezahlen",
     "word": "bezahlen",
+    "source": "bezahlen (bezahlte, hat bezahlt)",
     "translation": "оплачивать",
     "part": "Глаголы",
     "category": "Akkusativ",
     "level": "",
     "gender": "",
     "forms": [
-      "bezahlte",
-      "hat bezahlt"
+      "Präteritum: bezahlte",
+      "Perfekt: hat bezahlt"
     ],
     "meanings": [
       "оплачивать"
@@ -155,26 +152,27 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Akkusativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "brauchen",
     "word": "brauchen",
+    "source": "brauchen (brauchte, hat gebraucht)",
     "translation": "нуждаться в; нуждаться, требоваться",
     "part": "Глаголы",
     "category": "Akkusativ",
     "level": "",
     "gender": "",
     "forms": [
-      "brauchte",
-      "hat gebraucht"
+      "Präteritum: brauchte",
+      "Perfekt: hat gebraucht"
     ],
     "meanings": [
-      "нуждаться в; нуждаться, требоваться"
+      "нуждаться в",
+      "нуждаться",
+      "требоваться"
     ],
     "examples": [
       {
@@ -182,23 +180,22 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Akkusativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "gehoren",
     "word": "gehören",
+    "source": "gehören (gehörte, hat gehört)",
     "translation": "принадлежать",
     "part": "Глаголы",
     "category": "Dativ",
     "level": "",
     "gender": "",
     "forms": [
-      "gehörte",
-      "hat gehört"
+      "Präteritum: gehörte",
+      "Perfekt: hat gehört"
     ],
     "meanings": [
       "принадлежать"
@@ -209,23 +206,22 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Dativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "gratulieren",
     "word": "gratulieren",
+    "source": "gratulieren (gratulierte, hat gratuliert)",
     "translation": "поздравлять",
     "part": "Глаголы",
     "category": "Dativ",
     "level": "",
     "gender": "",
     "forms": [
-      "gratulierte",
-      "hat gratuliert"
+      "Präteritum: gratulierte",
+      "Perfekt: hat gratuliert"
     ],
     "meanings": [
       "поздравлять"
@@ -236,26 +232,26 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Dativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "essen",
     "word": "essen",
+    "source": "essen (aß, hat gegessen)",
     "translation": "есть, кушать",
     "part": "Глаголы",
     "category": "Akkusativ",
     "level": "",
     "gender": "",
     "forms": [
-      "aß",
-      "hat gegessen"
+      "Präteritum: aß",
+      "Perfekt: hat gegessen"
     ],
     "meanings": [
-      "есть, кушать"
+      "есть",
+      "кушать"
     ],
     "examples": [
       {
@@ -263,23 +259,22 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Akkusativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "gelingen",
     "word": "gelingen",
+    "source": "gelingen (gelang, ist gelungen)",
     "translation": "удаваться",
     "part": "Глаголы",
     "category": "Dativ",
     "level": "",
     "gender": "",
     "forms": [
-      "gelang",
-      "ist gelungen"
+      "Präteritum: gelang",
+      "Perfekt: ist gelungen"
     ],
     "meanings": [
       "удаваться"
@@ -290,23 +285,22 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Dativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "finden",
     "word": "finden",
+    "source": "finden (fand, hat gefunden)",
     "translation": "находить",
     "part": "Глаголы",
     "category": "Akkusativ",
     "level": "",
     "gender": "",
     "forms": [
-      "fand",
-      "hat gefunden"
+      "Präteritum: fand",
+      "Perfekt: hat gefunden"
     ],
     "meanings": [
       "находить"
@@ -317,26 +311,26 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Akkusativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "kennen",
     "word": "kennen",
+    "source": "kennen (kannte, hat gekannt)",
     "translation": "знать, быть знакомым с",
     "part": "Глаголы",
     "category": "Akkusativ",
     "level": "",
     "gender": "",
     "forms": [
-      "kannte",
-      "hat gekannt"
+      "Präteritum: kannte",
+      "Perfekt: hat gekannt"
     ],
     "meanings": [
-      "знать, быть знакомым с"
+      "знать",
+      "быть знакомым с"
     ],
     "examples": [
       {
@@ -344,23 +338,22 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Akkusativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "probieren",
     "word": "probieren",
+    "source": "probieren (probierte, hat probiert)",
     "translation": "пробовать",
     "part": "Глаголы",
     "category": "Akkusativ",
     "level": "",
     "gender": "",
     "forms": [
-      "probierte",
-      "hat probiert"
+      "Präteritum: probierte",
+      "Perfekt: hat probiert"
     ],
     "meanings": [
       "пробовать"
@@ -371,23 +364,22 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Akkusativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "zuhoren",
     "word": "zuhören",
+    "source": "zuhören (hörte zu, hat zugehört)",
     "translation": "слушать кого-либо",
     "part": "Глаголы",
     "category": "Dativ",
     "level": "",
     "gender": "",
     "forms": [
-      "hörte zu",
-      "hat zugehört"
+      "Präteritum: hörte zu",
+      "Perfekt: hat zugehört"
     ],
     "meanings": [
       "слушать кого-либо"
@@ -398,26 +390,26 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Dativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "kennenlernen",
     "word": "kennenlernen",
+    "source": "kennenlernen (lernte kennen, hat kennengelernt)",
     "translation": "знакомиться, узнавать",
     "part": "Глаголы",
     "category": "Akkusativ",
     "level": "",
     "gender": "",
     "forms": [
-      "lernte kennen",
-      "hat kennengelernt"
+      "Präteritum: lernte kennen",
+      "Perfekt: hat kennengelernt"
     ],
     "meanings": [
-      "знакомиться, узнавать"
+      "знакомиться",
+      "узнавать"
     ],
     "examples": [
       {
@@ -425,23 +417,22 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Akkusativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "schaden",
     "word": "schaden",
+    "source": "schaden (schadete, hat geschadet)",
     "translation": "вредить",
     "part": "Глаголы",
     "category": "Dativ",
     "level": "",
     "gender": "",
     "forms": [
-      "schadete",
-      "hat geschadet"
+      "Präteritum: schadete",
+      "Perfekt: hat geschadet"
     ],
     "meanings": [
       "вредить"
@@ -452,23 +443,22 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Dativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "verstehen",
     "word": "verstehen",
+    "source": "verstehen (verstand, hat verstanden)",
     "translation": "понимать",
     "part": "Глаголы",
     "category": "Akkusativ",
     "level": "",
     "gender": "",
     "forms": [
-      "verstand",
-      "hat verstanden"
+      "Präteritum: verstand",
+      "Perfekt: hat verstanden"
     ],
     "meanings": [
       "понимать"
@@ -479,23 +469,22 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Akkusativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "vergessen",
     "word": "vergessen",
+    "source": "vergessen (vergaß, hat vergessen)",
     "translation": "забывать",
     "part": "Глаголы",
     "category": "Akkusativ",
     "level": "",
     "gender": "",
     "forms": [
-      "vergaß",
-      "hat vergessen"
+      "Präteritum: vergaß",
+      "Perfekt: hat vergessen"
     ],
     "meanings": [
       "забывать"
@@ -506,23 +495,22 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Akkusativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "schwerfallen",
     "word": "schwerfallen",
+    "source": "schwerfallen (fiel schwer, ist schwergefallen)",
     "translation": "даваться с трудом",
     "part": "Глаголы",
     "category": "Dativ",
     "level": "",
     "gender": "",
     "forms": [
-      "fiel schwer",
-      "ist schwergefallen"
+      "Präteritum: fiel schwer",
+      "Perfekt: ist schwergefallen"
     ],
     "meanings": [
       "даваться с трудом"
@@ -533,23 +521,22 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Dativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "zustimmen",
     "word": "zustimmen",
+    "source": "zustimmen (stimmte zu, hat zugestimmt)",
     "translation": "соглашаться с кем-либо",
     "part": "Глаголы",
     "category": "Dativ",
     "level": "",
     "gender": "",
     "forms": [
-      "stimmte zu",
-      "hat zugestimmt"
+      "Präteritum: stimmte zu",
+      "Perfekt: hat zugestimmt"
     ],
     "meanings": [
       "соглашаться с кем-либо"
@@ -560,23 +547,22 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Dativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   },
   {
     "id": "beeinflussen",
     "word": "beeinflussen",
+    "source": "beeinflussen (beeinflusste, hat beeinflusst)",
     "translation": "влиять на что-либо",
     "part": "Глаголы",
     "category": "Akkusativ",
     "level": "",
     "gender": "",
     "forms": [
-      "beeinflusste",
-      "hat beeinflusst"
+      "Präteritum: beeinflusste",
+      "Perfekt: hat beeinflusst"
     ],
     "meanings": [
       "влиять на что-либо"
@@ -587,9 +573,7 @@
         "ru": ""
       }
     ],
-    "related": [
-      "Akkusativ-Verb"
-    ],
+    "related": [],
     "status": "new",
     "favorite": false
   }
