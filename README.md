@@ -31,33 +31,33 @@ node scripts/convert-notion-csv.js
 
 ## GitHub Pages
 
-В `https://github.com/Arkkienkeli/Arkkienkeli.github.io` уже есть `index.html` со старой страницей-картой. Поэтому выбери один из двух вариантов.
+Этот проект хостится из репозитория `https://github.com/NickNatGame/Deutsch`.
 
-### Вариант A: словарь как главная страница
+Так как это project site, а не специальный репозиторий `nicknatgame.github.io`, итоговый адрес будет:
 
-Скопируй содержимое этой папки в корень `Arkkienkeli.github.io`. Старый `index.html` будет заменен, а словарь откроется на `https://arkkienkeli.github.io/`.
+```text
+https://nicknatgame.github.io/Deutsch/
+```
+
+### Первичная публикация
 
 ```powershell
-git clone https://github.com/Arkkienkeli/Arkkienkeli.github.io.git
-Copy-Item -Recurse -Force .\Deutsch\* .\Arkkienkeli.github.io\
-Set-Location .\Arkkienkeli.github.io
+git remote -v
 git add .
 git commit -m "Build German dictionary"
-git push -u origin main
+git push Deutsch master
 ```
 
-### Вариант B: словарь в подпапке
+### Включение GitHub Pages
 
-Сохраняет старую главную страницу. Словарь будет на `https://arkkienkeli.github.io/deutsch/`.
+В GitHub открой:
 
-```powershell
-git clone https://github.com/Arkkienkeli/Arkkienkeli.github.io.git
-New-Item -ItemType Directory -Force .\Arkkienkeli.github.io\deutsch
-Copy-Item -Recurse -Force .\Deutsch\* .\Arkkienkeli.github.io\deutsch\
-Set-Location .\Arkkienkeli.github.io
-git add .
-git commit -m "Add German dictionary"
-git push -u origin main
-```
+Settings -> Pages -> Build and deployment -> Source: `Deploy from a branch`
 
-Если GitHub попросит включить Pages вручную: Settings -> Pages -> Deploy from a branch -> `main` / root.
+Выбери:
+- Branch: `master`
+- Folder: `/ (root)`
+
+После сохранения GitHub обычно публикует сайт за 1-2 минуты.
+
+Если позже переименуешь ветку в `main`, в Pages надо будет выбрать `main` вместо `master`.
