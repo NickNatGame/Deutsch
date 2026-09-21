@@ -6,12 +6,14 @@ const statusLabels = {
 
 const viewItems = [
   { id: "all", label: "Alle слова", icon: "list" },
+  { id: "cards", label: "Карточки", icon: "cards" },
   { id: "favorite", label: "Избранное", icon: "star" },
   { id: "review", label: "Повторение", icon: "refresh" },
 ];
 
 const icons = {
   list: '<svg viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01"/></svg>',
+  cards: '<svg viewBox="0 0 24 24"><path d="M7 7.5 15.5 4l4.5 11-8.5 3.5L7 7.5Z"/><path d="M4 9v10a2 2 0 0 0 2 2h10"/></svg>',
   star: '<svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.47 6.03.88-4.36 4.25 1.03 6L12 16.76 6.6 19.6l1.03-6-4.36-4.25 6.03-.88L12 3Z"/></svg>',
   refresh: '<svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-15.53 6.21M3 12A9 9 0 0 1 18.53 5.79M3 17v4h4M21 7V3h-4"/></svg>',
   home: '<svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3V10.5Z"/></svg>',
@@ -52,6 +54,8 @@ const state = {
   sort: "word",
   page: 1,
   perPage: 15,
+  cardIndex: 0,
+  cardFlipped: false,
 };
 
 const els = {
@@ -72,6 +76,7 @@ const els = {
   reviewCount: document.querySelector("#reviewCount"),
   importDialog: document.querySelector("#importDialog"),
   importText: document.querySelector("#importText"),
+  dictionaryPane: document.querySelector(".dictionary-pane"),
 };
 
 async function loadWords() {
@@ -282,6 +287,12 @@ function renderParts() {
 }
 
 function renderList() {
+  els.dictionaryPane.classList.toggle("cards-mode", state.view === "cards");
+  if (state.view === "cards") {
+    renderCards();
+    return;
+  }
+
   const pageWords = currentPageWords();
   const allFiltered = filteredWords();
   if (!pageWords.length) {
@@ -295,6 +306,56 @@ function renderList() {
   els.pageLabel.textContent = String(state.page);
   els.prevPage.disabled = state.page === 1;
   els.nextPage.disabled = state.page >= Math.ceil(allFiltered.length / state.perPage);
+}
+
+function renderCards() {
+  const words = filteredWords();
+  state.cardIndex = Math.max(0, Math.min(state.cardIndex, words.length - 1));
+  const word = words[state.cardIndex];
+
+  els.prevPage.disabled = true;
+  els.nextPage.disabled = true;
+  els.pageLabel.textContent = "—";
+  els.shownCount.textContent = words.length ? `Карточка ${state.cardIndex + 1} из ${words.length}` : "Нет карточек";
+
+  if (!word) {
+    els.wordList.innerHTML = '<div class="empty-state">Нет слов для карточек</div>';
+    return;
+  }
+
+  state.selectedId = word.id;
+  els.wordList.innerHTML = `
+    <section class="flashcards" aria-label="Карточки Quizlet">
+      <div class="flashcard-meta">
+        <span>${escapeHtml(word.category || "Weitere")}</span>
+        <span>${escapeHtml(word.part || "")}</span>
+      </div>
+
+      <button class="flashcard ${state.cardFlipped ? "flipped" : ""}" type="button" data-card-flip aria-label="Перевернуть карточку">
+        <span class="flashcard-side flashcard-front">
+          <small>Deutsch</small>
+          <strong>${escapeHtml(word.word)}</strong>
+          <em>${word.forms.map(escapeHtml).join(" · ")}</em>
+        </span>
+        <span class="flashcard-side flashcard-back">
+          <small>Русский</small>
+          <strong>${escapeHtml(word.translation)}</strong>
+          <em>${escapeHtml(word.examples[0]?.de || "Нет примера")}</em>
+        </span>
+      </button>
+
+      <div class="flashcard-controls">
+        <button class="ghost-button" type="button" data-card-prev>Назад</button>
+        <button class="primary-button" type="button" data-card-flip>${state.cardFlipped ? "Слово" : "Ответ"}</button>
+        <button class="ghost-button" type="button" data-card-next>Дальше</button>
+      </div>
+
+      <div class="flashcard-grades">
+        <button type="button" data-card-review>Повторить</button>
+        <button type="button" data-card-known>Знаю</button>
+      </div>
+    </section>
+  `;
 }
 
 function wordRow(word) {
@@ -407,6 +468,44 @@ document.addEventListener("click", (event) => {
   if (viewButton) {
     state.view = viewButton.dataset.view;
     state.page = 1;
+    state.cardIndex = 0;
+    state.cardFlipped = false;
+    render();
+    return;
+  }
+
+  if (event.target.closest("[data-card-flip]")) {
+    state.cardFlipped = !state.cardFlipped;
+    renderList();
+    renderDetail();
+    return;
+  }
+
+  if (event.target.closest("[data-card-prev]")) {
+    state.cardIndex = Math.max(0, state.cardIndex - 1);
+    state.cardFlipped = false;
+    renderList();
+    renderDetail();
+    return;
+  }
+
+  if (event.target.closest("[data-card-next]")) {
+    state.cardIndex = Math.min(filteredWords().length - 1, state.cardIndex + 1);
+    state.cardFlipped = false;
+    renderList();
+    renderDetail();
+    return;
+  }
+
+  if (event.target.closest("[data-card-known], [data-card-review]")) {
+    const words = filteredWords();
+    const word = words[state.cardIndex];
+    if (!word) return;
+    const status = event.target.closest("[data-card-known]") ? "learned" : "review";
+    state.words = state.words.map((item) => (item.id === word.id ? { ...item, status } : item));
+    state.cardIndex = Math.min(state.cardIndex + 1, Math.max(0, words.length - 1));
+    state.cardFlipped = false;
+    persist();
     render();
     return;
   }

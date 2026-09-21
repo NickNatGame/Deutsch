@@ -327,6 +327,125 @@ button {
   outline: 0;
 }
 
+.cards-mode .table-header {
+  display: none;
+}
+
+.cards-mode .word-list {
+  display: grid;
+  place-items: center;
+  padding: 28px 0;
+}
+
+.flashcards {
+  width: min(720px, 100%);
+  display: grid;
+  gap: 18px;
+}
+
+.flashcard-meta {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.flashcard-meta span {
+  min-height: 30px;
+  border-radius: 6px;
+  padding: 6px 10px;
+  background: var(--soft);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.flashcard {
+  position: relative;
+  min-height: 360px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text);
+  box-shadow: 0 24px 70px rgba(23, 34, 49, 0.1);
+  transform-style: preserve-3d;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.flashcard:hover {
+  box-shadow: 0 30px 80px rgba(23, 34, 49, 0.14);
+}
+
+.flashcard.flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard-side {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 18px;
+  padding: 42px;
+  backface-visibility: hidden;
+}
+
+.flashcard-side small {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.flashcard-side strong {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: center;
+  font-size: clamp(38px, 6vw, 72px);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.flashcard-side em {
+  max-width: 520px;
+  color: var(--muted);
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.flashcard-back {
+  transform: rotateY(180deg);
+}
+
+.flashcard-controls,
+.flashcard-grades {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.flashcard-grades button {
+  min-height: 44px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 0 18px;
+  color: var(--ink);
+}
+
+.flashcard-grades button:first-child {
+  border-color: #e4b75c;
+  background: var(--amber-soft);
+  color: #815911;
+}
+
+.flashcard-grades button:last-child {
+  border-color: #8dd0aa;
+  background: var(--sage-soft);
+  color: #1e7043;
+}
+
 .word-row {
   width: 100%;
   min-height: 48px;
