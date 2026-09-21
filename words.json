@@ -1,0 +1,596 @@
+[
+  {
+    "id": "helfen",
+    "word": "helfen",
+    "translation": "помогать",
+    "part": "Глаголы",
+    "category": "Dativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "half",
+      "hat geholfen"
+    ],
+    "meanings": [
+      "помогать"
+    ],
+    "examples": [
+      {
+        "de": "Kannst du mir bei den Hausaufgaben helfen?",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Dativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "anrufen",
+    "word": "anrufen",
+    "translation": "звонить кому-либо",
+    "part": "Глаголы",
+    "category": "Akkusativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "rief an",
+      "hat angerufen"
+    ],
+    "meanings": [
+      "звонить кому-либо"
+    ],
+    "examples": [
+      {
+        "de": "Ich rufe meine Mutter heute Abend an.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Akkusativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "besuchen",
+    "word": "besuchen",
+    "translation": "посещать, навещать",
+    "part": "Глаголы",
+    "category": "Akkusativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "besuchte",
+      "hat besucht"
+    ],
+    "meanings": [
+      "посещать, навещать"
+    ],
+    "examples": [
+      {
+        "de": "Am Wochenende besuchen wir unsere Großeltern.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Akkusativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "danken",
+    "word": "danken",
+    "translation": "благодарить",
+    "part": "Глаголы",
+    "category": "Dativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "dankte",
+      "hat gedankt"
+    ],
+    "meanings": [
+      "благодарить"
+    ],
+    "examples": [
+      {
+        "de": "Ich danke dir für deine Hilfe.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Dativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "gefallen",
+    "word": "gefallen",
+    "translation": "нравиться",
+    "part": "Глаголы",
+    "category": "Dativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "gefiel",
+      "hat gefallen"
+    ],
+    "meanings": [
+      "нравиться"
+    ],
+    "examples": [
+      {
+        "de": "Der neue Film gefällt mir sehr gut.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Dativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "bezahlen",
+    "word": "bezahlen",
+    "translation": "оплачивать",
+    "part": "Глаголы",
+    "category": "Akkusativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "bezahlte",
+      "hat bezahlt"
+    ],
+    "meanings": [
+      "оплачивать"
+    ],
+    "examples": [
+      {
+        "de": "Ich bezahle die Rechnung mit Karte.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Akkusativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "brauchen",
+    "word": "brauchen",
+    "translation": "нуждаться в; нуждаться, требоваться",
+    "part": "Глаголы",
+    "category": "Akkusativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "brauchte",
+      "hat gebraucht"
+    ],
+    "meanings": [
+      "нуждаться в; нуждаться, требоваться"
+    ],
+    "examples": [
+      {
+        "de": "Für die Aufgabe brauche ich einen Computer.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Akkusativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "gehoren",
+    "word": "gehören",
+    "translation": "принадлежать",
+    "part": "Глаголы",
+    "category": "Dativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "gehörte",
+      "hat gehört"
+    ],
+    "meanings": [
+      "принадлежать"
+    ],
+    "examples": [
+      {
+        "de": "Wem gehört dieses Fahrrad?",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Dativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "gratulieren",
+    "word": "gratulieren",
+    "translation": "поздравлять",
+    "part": "Глаголы",
+    "category": "Dativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "gratulierte",
+      "hat gratuliert"
+    ],
+    "meanings": [
+      "поздравлять"
+    ],
+    "examples": [
+      {
+        "de": "Wir gratulieren dir zum Geburtstag.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Dativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "essen",
+    "word": "essen",
+    "translation": "есть, кушать",
+    "part": "Глаголы",
+    "category": "Akkusativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "aß",
+      "hat gegessen"
+    ],
+    "meanings": [
+      "есть, кушать"
+    ],
+    "examples": [
+      {
+        "de": "Zum Frühstück esse ich einen Apfel.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Akkusativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "gelingen",
+    "word": "gelingen",
+    "translation": "удаваться",
+    "part": "Глаголы",
+    "category": "Dativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "gelang",
+      "ist gelungen"
+    ],
+    "meanings": [
+      "удаваться"
+    ],
+    "examples": [
+      {
+        "de": "Die Prüfung ist ihr sehr gut gelungen.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Dativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "finden",
+    "word": "finden",
+    "translation": "находить",
+    "part": "Глаголы",
+    "category": "Akkusativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "fand",
+      "hat gefunden"
+    ],
+    "meanings": [
+      "находить"
+    ],
+    "examples": [
+      {
+        "de": "Ich kann meinen Schlüssel nicht finden.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Akkusativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "kennen",
+    "word": "kennen",
+    "translation": "знать, быть знакомым с",
+    "part": "Глаголы",
+    "category": "Akkusativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "kannte",
+      "hat gekannt"
+    ],
+    "meanings": [
+      "знать, быть знакомым с"
+    ],
+    "examples": [
+      {
+        "de": "Kennst du diesen Mann?",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Akkusativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "probieren",
+    "word": "probieren",
+    "translation": "пробовать",
+    "part": "Глаголы",
+    "category": "Akkusativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "probierte",
+      "hat probiert"
+    ],
+    "meanings": [
+      "пробовать"
+    ],
+    "examples": [
+      {
+        "de": "Möchtest du den Kuchen probieren?",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Akkusativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "zuhoren",
+    "word": "zuhören",
+    "translation": "слушать кого-либо",
+    "part": "Глаголы",
+    "category": "Dativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "hörte zu",
+      "hat zugehört"
+    ],
+    "meanings": [
+      "слушать кого-либо"
+    ],
+    "examples": [
+      {
+        "de": "Bitte hör mir gut zu.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Dativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "kennenlernen",
+    "word": "kennenlernen",
+    "translation": "знакомиться, узнавать",
+    "part": "Глаголы",
+    "category": "Akkusativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "lernte kennen",
+      "hat kennengelernt"
+    ],
+    "meanings": [
+      "знакомиться, узнавать"
+    ],
+    "examples": [
+      {
+        "de": "Auf der Reise habe ich viele nette Menschen kennengelernt.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Akkusativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "schaden",
+    "word": "schaden",
+    "translation": "вредить",
+    "part": "Глаголы",
+    "category": "Dativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "schadete",
+      "hat geschadet"
+    ],
+    "meanings": [
+      "вредить"
+    ],
+    "examples": [
+      {
+        "de": "Zu wenig Schlaf schadet der Gesundheit.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Dativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "verstehen",
+    "word": "verstehen",
+    "translation": "понимать",
+    "part": "Глаголы",
+    "category": "Akkusativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "verstand",
+      "hat verstanden"
+    ],
+    "meanings": [
+      "понимать"
+    ],
+    "examples": [
+      {
+        "de": "Ich verstehe diese Aufgabe nicht.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Akkusativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "vergessen",
+    "word": "vergessen",
+    "translation": "забывать",
+    "part": "Глаголы",
+    "category": "Akkusativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "vergaß",
+      "hat vergessen"
+    ],
+    "meanings": [
+      "забывать"
+    ],
+    "examples": [
+      {
+        "de": "Ich habe deinen Namen vergessen.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Akkusativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "schwerfallen",
+    "word": "schwerfallen",
+    "translation": "даваться с трудом",
+    "part": "Глаголы",
+    "category": "Dativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "fiel schwer",
+      "ist schwergefallen"
+    ],
+    "meanings": [
+      "даваться с трудом"
+    ],
+    "examples": [
+      {
+        "de": "Das frühe Aufstehen fällt mir schwer.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Dativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "zustimmen",
+    "word": "zustimmen",
+    "translation": "соглашаться с кем-либо",
+    "part": "Глаголы",
+    "category": "Dativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "stimmte zu",
+      "hat zugestimmt"
+    ],
+    "meanings": [
+      "соглашаться с кем-либо"
+    ],
+    "examples": [
+      {
+        "de": "Ich stimme dir vollkommen zu.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Dativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "beeinflussen",
+    "word": "beeinflussen",
+    "translation": "влиять на что-либо",
+    "part": "Глаголы",
+    "category": "Akkusativ",
+    "level": "",
+    "gender": "",
+    "forms": [
+      "beeinflusste",
+      "hat beeinflusst"
+    ],
+    "meanings": [
+      "влиять на что-либо"
+    ],
+    "examples": [
+      {
+        "de": "Diese Entscheidung hat mein Leben stark beeinflusst.",
+        "ru": ""
+      }
+    ],
+    "related": [
+      "Akkusativ-Verb"
+    ],
+    "status": "new",
+    "favorite": false
+  }
+]

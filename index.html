@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deutsch Dictionary</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Навигация">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 5.5C6.8 4.1 9.3 4.3 12 6v13c-2.7-1.7-5.2-1.9-8-.5v-13Zm8 .5c2.7-1.7 5.2-1.9 8-.5v13c-2.8-1.4-5.3-1.2-8 .5V6Z"/></svg>
+          </div>
+          <div>
+            <h1>Deutsch</h1>
+            <p>Wörter. Besser. Jeden Tag.</p>
+          </div>
+        </div>
+
+        <nav class="nav-list" id="viewNav"></nav>
+
+        <div class="sidebar-section">
+          <h2>Категории</h2>
+          <div class="category-list" id="categoryNav"></div>
+        </div>
+
+        <div class="progress-card">
+          <div class="progress-heading">
+            <strong>Мой прогресс</strong>
+            <span id="progressPercent">0%</span>
+          </div>
+          <div class="progress-track"><span id="progressBar"></span></div>
+          <div class="stat-grid">
+            <span><strong id="totalCount">0</strong>Всего слов</span>
+            <span><strong id="learnedCount">0</strong>Изучено</span>
+            <span><strong id="reviewCount">0</strong>На повторении</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <section class="dictionary-pane" aria-label="Список слов">
+          <header class="toolbar">
+            <label class="search">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m1.35-5.65a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/></svg>
+              <input id="searchInput" type="search" placeholder="Поиск (например: Weg, Haus, essen ...)" autocomplete="off" />
+            </label>
+            <button class="ghost-button" id="importButton" type="button" title="Импортировать JSON">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+              Импорт
+            </button>
+            <button class="ghost-button" id="exportButton" type="button" title="Скачать JSON">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21V9m0 12 4-4m-4 4-4-4M4 7V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/></svg>
+              Экспорт
+            </button>
+          </header>
+
+          <div class="filter-row" id="partFilters"></div>
+
+          <div class="table-header">
+            <button data-sort="word" type="button">Слово <span>⌄</span></button>
+            <button data-sort="translation" type="button">Перевод <span>⌄</span></button>
+            <button data-sort="category" type="button">Категория <span>⌄</span></button>
+            <button data-sort="status" type="button">Статус <span>⌄</span></button>
+          </div>
+
+          <div class="word-list" id="wordList" tabindex="0" aria-live="polite"></div>
+
+          <footer class="list-footer">
+            <span id="shownCount">Показано 0</span>
+            <div class="pager" aria-label="Страницы">
+              <button type="button" id="prevPage" title="Назад">‹</button>
+              <span id="pageLabel">1</span>
+              <button type="button" id="nextPage" title="Вперед">›</button>
+            </div>
+          </footer>
+        </section>
+
+        <aside class="detail-pane" id="detailPane" aria-label="Карточка слова"></aside>
+      </main>
+    </div>
+
+    <dialog class="import-dialog" id="importDialog">
+      <form method="dialog">
+        <header>
+          <h2>Импорт слов</h2>
+          <button class="icon-button" value="cancel" type="submit" title="Закрыть">×</button>
+        </header>
+        <p>Вставь JSON-массив слов или CSV из Notion с колонками Verb, Beispiel, Kasus, Russisch.</p>
+        <textarea id="importText" spellcheck="false"></textarea>
+        <menu>
+          <button class="ghost-button" value="cancel" type="submit">Отмена</button>
+          <button class="primary-button" id="applyImport" value="default" type="button">Загрузить</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
