@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const input = process.argv[2] || path.join(__dirname, "..", "data", "notion-verbs.csv");
+const input = process.argv[2] || path.join(__dirname, "..", "data");
 const output = process.argv[3] || path.join(__dirname, "..", "words.json");
 
 function parseCsv(text) {
@@ -42,6 +42,72 @@ function parseCsv(text) {
   );
 }
 
+function listInputFiles(inputPath) {
+  const stats = fs.statSync(inputPath);
+  if (!stats.isDirectory()) return [inputPath];
+
+  return fs
+    .readdirSync(inputPath)
+    .filter((file) => /\.(csv|json)$/i.test(file))
+    .map((file) => path.join(inputPath, file))
+    .sort((a, b) => a.localeCompare(b));
+}
+
+function extractJsonObjects(text) {
+  const objects = [];
+  let start = -1;
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+
+  for (let i = 0; i < text.length; i += 1) {
+    const char = text[i];
+
+    if (inString) {
+      if (escaped) {
+        escaped = false;
+      } else if (char === "\\") {
+        escaped = true;
+      } else if (char === '"') {
+        inString = false;
+      }
+      continue;
+    }
+
+    if (char === '"') {
+      inString = true;
+    } else if (char === "{") {
+      if (depth === 0) start = i;
+      depth += 1;
+    } else if (char === "}") {
+      depth -= 1;
+      if (depth === 0 && start >= 0) {
+        objects.push(JSON.parse(text.slice(start, i + 1)));
+        start = -1;
+      }
+    }
+  }
+
+  return objects;
+}
+
+function parseDataFile(file) {
+  const text = fs.readFileSync(file, "utf8").replace(/^\uFEFF/, "");
+  const trimmed = text.trim();
+  if (!trimmed) return [];
+
+  if (trimmed.startsWith("[") || trimmed.startsWith("{")) {
+    try {
+      const parsed = JSON.parse(trimmed);
+      return Array.isArray(parsed) ? parsed : [parsed];
+    } catch {
+      return extractJsonObjects(trimmed);
+    }
+  }
+
+  return parseCsv(text);
+}
+
 function slugify(value) {
   return String(value)
     .trim()
@@ -76,15 +142,56 @@ function splitMeanings(value) {
     .filter(Boolean);
 }
 
-function convertRow(row, index) {
+function normalizeForms(forms) {
+  const cleanForms = (Array.isArray(forms) ? forms : [])
+    .map((form) => String(form).trim())
+    .filter(Boolean);
+
+  if (cleanForms.length === 2 && cleanForms.every((form) => !form.includes(":"))) {
+    return [`Präteritum: ${cleanForms[0]}`, `Perfekt: ${cleanForms[1]}`];
+  }
+
+  return cleanForms;
+}
+
+function caseFromRow(row) {
+  const rawCategory = row.Kasus || row.category || "";
+  if (rawCategory && rawCategory !== "Weitere") return rawCategory;
+
+  const meanings = Array.isArray(row.meanings) ? row.meanings.map(String) : [];
+  const firstMeaning = meanings[0] || "";
+  if (/dativ|akkusativ|akk\.|dat\.|\+/.test(firstMeaning.toLowerCase())) return firstMeaning;
+
+  return rawCategory || "Weitere";
+}
+
+function normalizeExample(example) {
+  if (!example) return null;
+  if (typeof example === "string") return { de: example, ru: "" };
+  return { de: example.de || "", ru: example.ru || "" };
+}
+
+function convertRow(row, index, usedIds) {
   const rawVerb = row["Verb (Präteritum, Perfekt)"] || row.Verb || row.word || "";
-  const { word, forms, source } = splitVerbForms(rawVerb);
-  const kasus = row.Kasus || "Weitere";
+  const parsedVerb = splitVerbForms(rawVerb);
+  const word = parsedVerb.word || row.word || "";
+  const forms = normalizeForms(parsedVerb.forms.length ? parsedVerb.forms : row.forms);
+  const reconstructedSource = forms.length
+    ? `${word} (${forms.map((form) => form.replace(/^[^:]+:\s*/, "")).join(", ")})`
+    : word;
+  const source = row.source || (/\(.+\)/.test(rawVerb) ? parsedVerb.source : reconstructedSource);
+  const kasus = caseFromRow(row);
   const translation = row.Russisch || row.translation || "";
   const example = row.Beispiel || "";
+  const examples = Array.isArray(row.examples)
+    ? row.examples.map(normalizeExample).filter(Boolean)
+    : [normalizeExample(example)].filter(Boolean);
+  const baseId = slugify(word) || `word-${index + 1}`;
+  const seenCount = usedIds.get(baseId) || 0;
+  usedIds.set(baseId, seenCount + 1);
 
   return {
-    id: slugify(word) || `word-${index + 1}`,
+    id: seenCount ? `${baseId}-${seenCount + 1}` : baseId,
     word,
     source,
     translation,
@@ -94,15 +201,18 @@ function convertRow(row, index) {
     gender: "",
     forms,
     meanings: splitMeanings(translation),
-    examples: example ? [{ de: example, ru: "" }] : [],
+    examples,
     related: [],
     status: "new",
     favorite: false,
   };
 }
 
-const csv = fs.readFileSync(input, "utf8").replace(/^\uFEFF/, "");
-const words = parseCsv(csv).map(convertRow);
+const rows = listInputFiles(input).flatMap(parseDataFile);
+const usedIds = new Map();
+const words = rows
+  .map((row, index) => convertRow(row, index, usedIds))
+  .filter((word) => word.word && word.translation);
 
 fs.writeFileSync(output, `${JSON.stringify(words, null, 2)}\n`, "utf8");
 console.log(`Converted ${words.length} rows: ${input} -> ${output}`);

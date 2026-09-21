@@ -160,7 +160,7 @@
     "id": "brauchen",
     "word": "brauchen",
     "source": "brauchen (brauchte, hat gebraucht)",
-    "translation": "нуждаться в; нуждаться, требоваться",
+    "translation": "нуждаться в, нуждаться",
     "part": "Глаголы",
     "category": "Akkusativ",
     "level": "",
@@ -171,8 +171,7 @@
     ],
     "meanings": [
       "нуждаться в",
-      "нуждаться",
-      "требоваться"
+      "нуждаться"
     ],
     "examples": [
       {
@@ -570,6 +569,306 @@
     "examples": [
       {
         "de": "Diese Entscheidung hat mein Leben stark beeinflusst.",
+        "ru": ""
+      }
+    ],
+    "related": [],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "hoffen",
+    "word": "hoffen",
+    "source": "hoffen",
+    "translation": "надеяться на",
+    "part": "Глаголы",
+    "category": "auf + Akk.",
+    "level": "",
+    "gender": "",
+    "forms": [],
+    "meanings": [
+      "надеяться на"
+    ],
+    "examples": [
+      {
+        "de": "Wir hoffen auf gutes Wetter. Worauf hoffst du? – Ich hoffe darauf, dass alles gut geht.",
+        "ru": ""
+      }
+    ],
+    "related": [],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "gehoren-2",
+    "word": "gehören",
+    "source": "gehören",
+    "translation": "относиться к",
+    "part": "Глаголы",
+    "category": "zu + Dat.",
+    "level": "",
+    "gender": "",
+    "forms": [],
+    "meanings": [
+      "относиться к"
+    ],
+    "examples": [
+      {
+        "de": "Dieses Kapitel gehört zum ersten Teil des Buches. Wozu gehört dieses Teil? – Es gehört dazu.",
+        "ru": ""
+      }
+    ],
+    "related": [],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "sich-freuen",
+    "word": "sich freuen",
+    "source": "sich freuen",
+    "translation": "радоваться предстоящему",
+    "part": "Глаголы",
+    "category": "auf + Akk.",
+    "level": "",
+    "gender": "",
+    "forms": [],
+    "meanings": [
+      "радоваться предстоящему"
+    ],
+    "examples": [
+      {
+        "de": "Ich freue mich auf die Ferien. Worauf freust du dich? – Ich freue mich darauf, meine Freunde wiederzusehen.",
+        "ru": ""
+      }
+    ],
+    "related": [],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "sich-freuen-2",
+    "word": "sich freuen",
+    "source": "sich freuen",
+    "translation": "радоваться чему-либо",
+    "part": "Глаголы",
+    "category": "über + Akk.",
+    "level": "",
+    "gender": "",
+    "forms": [],
+    "meanings": [
+      "радоваться чему-либо"
+    ],
+    "examples": [
+      {
+        "de": "Sie freut sich über das Geschenk. Worüber freust du dich? – Ich freue mich darüber, dass du gekommen bist.",
+        "ru": ""
+      }
+    ],
+    "related": [],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "sich-befassen",
+    "word": "sich befassen",
+    "source": "sich befassen",
+    "translation": "заниматься чем-либо",
+    "part": "Глаголы",
+    "category": "mit + Dat.",
+    "level": "",
+    "gender": "",
+    "forms": [],
+    "meanings": [
+      "заниматься чем-либо"
+    ],
+    "examples": [
+      {
+        "de": "Im Unterricht befassen wir uns mit dem Ersten Weltkrieg. Womit befasst ihr euch gerade? – Wir befassen uns damit, wie der Krieg begann.",
+        "ru": ""
+      }
+    ],
+    "related": [],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "sich-beschaftigen",
+    "word": "sich beschäftigen",
+    "source": "sich beschäftigen",
+    "translation": "заниматься чем-либо",
+    "part": "Глаголы",
+    "category": "mit + Dat.",
+    "level": "",
+    "gender": "",
+    "forms": [],
+    "meanings": [
+      "заниматься чем-либо"
+    ],
+    "examples": [
+      {
+        "de": "Er beschäftigt sich mit deutscher Geschichte. Womit beschäftigst du dich? – Ich beschäftige mich damit, einen Vortrag vorzubereiten.",
+        "ru": ""
+      }
+    ],
+    "related": [],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "sich-verlassen",
+    "word": "sich verlassen",
+    "source": "sich verlassen",
+    "translation": "полагаться на кого-либо / что-либо",
+    "part": "Глаголы",
+    "category": "auf + Akk.",
+    "level": "",
+    "gender": "",
+    "forms": [],
+    "meanings": [
+      "полагаться на кого-либо / что-либо"
+    ],
+    "examples": [
+      {
+        "de": "Du kannst dich auf mich verlassen. Worauf kann ich mich verlassen? – Du kannst dich darauf verlassen, dass ich dir helfe.",
+        "ru": ""
+      }
+    ],
+    "related": [],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "sich-unterscheiden",
+    "word": "sich unterscheiden",
+    "source": "sich unterscheiden",
+    "translation": "отличаться от",
+    "part": "Глаголы",
+    "category": "von + Dat.",
+    "level": "",
+    "gender": "",
+    "forms": [],
+    "meanings": [
+      "отличаться от"
+    ],
+    "examples": [
+      {
+        "de": "Dieses Modell unterscheidet sich von dem älteren Modell. Wovon unterscheidet es sich? – Es unterscheidet sich davon deutlich.",
+        "ru": ""
+      }
+    ],
+    "related": [],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "sich-argern",
+    "word": "sich ärgern",
+    "source": "sich ärgern",
+    "translation": "сердиться, злиться из-за чего-либо",
+    "part": "Глаголы",
+    "category": "über + Akk.",
+    "level": "",
+    "gender": "",
+    "forms": [],
+    "meanings": [
+      "сердиться",
+      "злиться из-за чего-либо"
+    ],
+    "examples": [
+      {
+        "de": "Ich ärgere mich über den Fehler. Worüber ärgerst du dich? – Ich ärgere mich darüber, dass der Bus schon wieder zu spät kommt.",
+        "ru": ""
+      }
+    ],
+    "related": [],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "beginnen",
+    "word": "beginnen",
+    "source": "beginnen",
+    "translation": "начинать с чего-либо",
+    "part": "Глаголы",
+    "category": "mit + Dat.",
+    "level": "",
+    "gender": "",
+    "forms": [],
+    "meanings": [
+      "начинать с чего-либо"
+    ],
+    "examples": [
+      {
+        "de": "Wir beginnen mit der ersten Aufgabe. Womit sollen wir beginnen? – Wir beginnen damit, den Text zu lesen.",
+        "ru": ""
+      }
+    ],
+    "related": [],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "anfangen",
+    "word": "anfangen",
+    "source": "anfangen",
+    "translation": "начинать с чего-либо",
+    "part": "Глаголы",
+    "category": "mit + Dat.",
+    "level": "",
+    "gender": "",
+    "forms": [],
+    "meanings": [
+      "начинать с чего-либо"
+    ],
+    "examples": [
+      {
+        "de": "Ich fange mit den Hausaufgaben an. Womit fängst du an? – Ich fange damit an, mein Zimmer aufzuräumen.",
+        "ru": ""
+      }
+    ],
+    "related": [],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "sich-konzentrieren",
+    "word": "sich konzentrieren",
+    "source": "sich konzentrieren",
+    "translation": "сосредоточиться / концентрироваться на",
+    "part": "Глаголы",
+    "category": "auf + Akk.",
+    "level": "",
+    "gender": "",
+    "forms": [],
+    "meanings": [
+      "сосредоточиться / концентрироваться на"
+    ],
+    "examples": [
+      {
+        "de": "Konzentriere dich auf deine Aufgabe. Worauf konzentrierst du dich? – Ich konzentriere mich darauf, keine Fehler zu machen.",
+        "ru": ""
+      }
+    ],
+    "related": [],
+    "status": "new",
+    "favorite": false
+  },
+  {
+    "id": "sich-kummern",
+    "word": "sich kümmern",
+    "source": "sich kümmern",
+    "translation": "заботиться о",
+    "part": "Глаголы",
+    "category": "um + Akk.",
+    "level": "",
+    "gender": "",
+    "forms": [],
+    "meanings": [
+      "заботиться о"
+    ],
+    "examples": [
+      {
+        "de": "Sie kümmert sich um ihre Großmutter. Worum kümmerst du dich? – Ich kümmere mich darum, dass alles rechtzeitig fertig wird.",
         "ru": ""
       }
     ],
