@@ -47,7 +47,7 @@ const categoryIcons = {
 const state = {
   words: [],
   selectedId: null,
-  view: "all",
+  view: new URLSearchParams(window.location.search).get("v") === "cards" ? "cards" : "all",
   part: "Все",
   category: "Все",
   query: "",
@@ -77,6 +77,7 @@ const els = {
   importDialog: document.querySelector("#importDialog"),
   importText: document.querySelector("#importText"),
   dictionaryPane: document.querySelector(".dictionary-pane"),
+  workspace: document.querySelector(".workspace"),
 };
 
 async function loadWords() {
@@ -288,6 +289,7 @@ function renderParts() {
 
 function renderList() {
   els.dictionaryPane.classList.toggle("cards-mode", state.view === "cards");
+  els.workspace.classList.toggle("cards-active", state.view === "cards");
   if (state.view === "cards") {
     renderCards();
     return;
@@ -371,6 +373,11 @@ function wordRow(word) {
 }
 
 function renderDetail() {
+  if (state.view === "cards") {
+    els.detailPane.innerHTML = "";
+    return;
+  }
+
   const word = state.words.find((item) => item.id === state.selectedId) || filteredWords()[0] || state.words[0];
   if (!word) {
     els.detailPane.innerHTML = '<div class="empty-state">Добавь слова через импорт</div>';

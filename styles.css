@@ -206,6 +206,14 @@ button {
   min-width: 0;
 }
 
+.workspace.cards-active {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.workspace.cards-active .detail-pane {
+  display: none;
+}
+
 .dictionary-pane {
   display: flex;
   flex-direction: column;
