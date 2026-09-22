@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deutsch Dictionary</title>
+    <script>
+      (() => {
+        const savedTheme = (() => {
+          try {
+            return localStorage.getItem("deutsch-dictionary.theme");
+          } catch {
+            return null;
+          }
+        })();
+        const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme = savedTheme || (prefersDark ? "dark" : "light");
+      })();
+    </script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -18,6 +31,11 @@
             <p>Wörter. Besser. Jeden Tag.</p>
           </div>
         </div>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true"></span>
+          <span id="themeToggleLabel">Тёмная тема</span>
+        </button>
 
         <nav class="nav-list" id="viewNav"></nav>
 

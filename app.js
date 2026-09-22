@@ -78,7 +78,23 @@ const els = {
   importText: document.querySelector("#importText"),
   dictionaryPane: document.querySelector(".dictionary-pane"),
   workspace: document.querySelector(".workspace"),
+  themeToggle: document.querySelector("#themeToggle"),
+  themeToggleLabel: document.querySelector("#themeToggleLabel"),
 };
+
+function applyTheme(theme) {
+  const nextTheme = theme === "dark" ? "dark" : "light";
+  document.documentElement.dataset.theme = nextTheme;
+  try {
+    localStorage.setItem("deutsch-dictionary.theme", nextTheme);
+  } catch {
+    // The toggle still works for the current page if storage is unavailable.
+  }
+  els.themeToggle?.setAttribute("aria-pressed", String(nextTheme === "dark"));
+  if (els.themeToggleLabel) {
+    els.themeToggleLabel.textContent = nextTheme === "dark" ? "Светлая тема" : "Тёмная тема";
+  }
+}
 
 async function loadWords() {
   const response = await fetch("./words.json");
@@ -641,6 +657,12 @@ document.querySelector("#exportButton").addEventListener("click", () => {
   link.click();
   URL.revokeObjectURL(url);
 });
+
+els.themeToggle?.addEventListener("click", () => {
+  applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+});
+
+applyTheme(document.documentElement.dataset.theme);
 
 loadWords().catch((error) => {
   els.wordList.innerHTML = `<div class="empty-state">Ошибка загрузки: ${escapeHtml(error.message)}</div>`;
